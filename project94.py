@@ -41,12 +41,11 @@ def load_data():
 	return df
 
 census_df = load_data()
-
-
-if st.checkbox('Show Census Data'):
-    st.subheader('Census Data Set')
-
-    st.write(census_df)
-
-    st.write('Number of rows:', data.shape[0])
-    st.write('Number of columns:', data.shape[1])
+	
+st.title('Census Data Visualisation')
+st.sidebar.title('Menu')
+if st.sidebar.checkbox('Show Raw Data'):
+  st.subheader('Census Dataset')
+  st.dataframe(census_df)
+  st.write('Number of rows = ', census_df.shape[0])
+  st.write('Number of columns = ', census_df.shape[1])
